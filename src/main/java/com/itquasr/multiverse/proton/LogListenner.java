@@ -1,13 +1,12 @@
 package com.itquasr.multiverse.proton;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 import java.nio.file.Path;
 import java.nio.file.WatchEvent;
 
+@Slf4j
 public class LogListenner implements FileWatcherListener {
-    private static final Logger LOGGER = LoggerFactory.getLogger(LogListenner.class);
 
     @Override
     public void accept(WatchEvent<Path> pathWatchEvent) {
