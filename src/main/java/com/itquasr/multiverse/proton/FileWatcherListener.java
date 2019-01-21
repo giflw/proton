@@ -6,8 +6,4 @@ import java.util.function.Consumer;
 
 public interface FileWatcherListener extends Consumer<WatchEvent<Path>> {
 
-    @Override
-    default void accept(WatchEvent<Path> pathWatchEvent) {
-        System.out.println("!!! " + pathWatchEvent.context());
-    }
 }

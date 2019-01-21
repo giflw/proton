@@ -83,9 +83,10 @@ public class FileWatcher implements Runnable {
 
             @Override
             public FileVisitResult visitFileFailed(Path file, IOException exc) {
-                // FIXME
-                System.out.println(file + " -> " + exc.getClass());
-                return FileVisitResult.CONTINUE;
+                if (exc instanceof AccessDeniedException) {
+                    return FileVisitResult.CONTINUE;
+                }
+                return FileVisitResult.SKIP_SUBTREE;
             }
         });
     }
