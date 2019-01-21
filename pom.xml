@@ -85,8 +85,7 @@
                 <configuration>
                     <useFile>false</useFile>
                     <includes>
-                        <include>**/*Test.java</include>
-                        <include>**/*Spec.java</include>
+                        <include>**/*Spec*</include>
                     </includes>
                 </configuration>
             </plugin>

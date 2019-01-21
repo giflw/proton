@@ -7,9 +7,10 @@ import java.nio.file.Paths
 
 class FileWatcherSpec extends Specification {
 
-    def 'file watcher must call listenners'() {
+    def "file watcher must call listenners"() {
 
-        Path target = Paths.get(System.getProperty("java.io.tmpdir"))
+        given:
+        Path target = Paths.get(Utils.TMP_DIR)
 
         def msg = []
         def watcher = new FileWatcher(target, { evt -> msg.add(evt) } as FileWatcherListener)

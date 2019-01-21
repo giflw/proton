@@ -4,7 +4,9 @@ import spock.lang.Specification
 
 class AppSpec extends Specification {
 
-    def 'app have a lifecicle'(){
+    def "app have a lifecicle"() {
+
+        given:
         def app = new Application()
 
         when:
