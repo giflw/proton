@@ -5,12 +5,12 @@ import io.javalin.staticfiles.Location;
 
 public class EditorServer extends Server {
 
-    public static void main(String[] args) {
-        new EditorServer().start();
+    public EditorServer(Project project) {
+        super(project);
     }
 
     @Override
-    protected void config(Javalin javalin) {
+    protected void config(Javalin javalin, Project project) {
         javalin.enableWebJars();
         javalin.enableStaticFiles("proton-editor", Location.CLASSPATH);
     }

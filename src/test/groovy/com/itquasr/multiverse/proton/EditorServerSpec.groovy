@@ -7,7 +7,7 @@ class EditorServerSpec extends Specification {
 
     def "start/serve from classpath/stop"() {
         given:
-        def server = new EditorServer()
+        def server = new EditorServer(null)
 
         when:
         server.start()
