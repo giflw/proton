@@ -1,4 +1,4 @@
-package com.itquasr.multiverse.proton
+package com.itquasar.multiverse.proton
 
 
 import spock.lang.Specification

@@ -1,4 +1,4 @@
-package com.itquasr.multiverse.proton;
+package com.itquasar.multiverse.proton;
 
 import java.io.IOException;
 import java.nio.file.*;

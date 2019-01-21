@@ -1,4 +1,4 @@
-package com.itquasr.multiverse.proton;
+package com.itquasar.multiverse.proton;
 
 import io.javalin.Javalin;
 import lombok.AccessLevel;

@@ -1,4 +1,4 @@
-package com.itquasr.multiverse.proton;
+package com.itquasar.multiverse.proton;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.itquasr.multiverse.proton;
+package com.itquasar.multiverse.proton;
 
 import java.nio.file.Path;
 import java.nio.file.WatchEvent;

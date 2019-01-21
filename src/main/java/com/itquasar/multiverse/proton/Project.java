@@ -1,4 +1,4 @@
-package com.itquasr.multiverse.proton;
+package com.itquasar.multiverse.proton;
 
 import io.vavr.control.Try;
 import lombok.AllArgsConstructor;
