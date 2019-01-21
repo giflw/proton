@@ -1,5 +1,6 @@
 package com.itquasr.multiverse.proton;
 
+import io.vavr.control.Try;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
@@ -18,13 +19,18 @@ public class Project {
         File file = this.projectDir.toFile();
         if (!file.exists()) {
             LOGGER.warn("Creating folder {} as project root directory", this.projectDir);
-            file.mkdirs();
+            Try
+                    .of(() -> file.mkdirs())
+                    .onFailure((ex) -> LOGGER.error("Error creating directory {}", file, ex));
         } else {
             LOGGER.warn("Using folder {} as project root directory", this.projectDir);
         }
         for (Folder folder : Folder.values()) {
-            LOGGER.warn("Creating folder {}", folder);
-            folder.getPath(this.projectDir).toFile().mkdir();
+            File folderPath = folder.getPath(this.projectDir).toFile();
+            LOGGER.warn("Creating folder {}", folderPath);
+            Try
+                    .of(() -> folderPath.mkdir())
+                    .onFailure((ex) -> LOGGER.error("Error creating directory for {}: {}", folder, folderPath, ex));
         }
         return this;
     }

@@ -2,7 +2,7 @@ package com.itquasr.multiverse.proton
 
 import spock.lang.Specification
 
-import java.nio.file.Path
+import java.nio.file.Paths
 
 class ProjectSpec extends Specification {
 
@@ -10,7 +10,7 @@ class ProjectSpec extends Specification {
 
         given:
         def project = new Project(
-                Path.of(
+                Paths.get(
                         Utils.TMP_DIR + "/" + UUID.randomUUID()
                 )
         )
