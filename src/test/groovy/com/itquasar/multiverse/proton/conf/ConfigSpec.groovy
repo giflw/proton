@@ -44,4 +44,31 @@ class ConfigSpec extends Specification {
         config.preview.port == 5678
     }
 
+    def "create config if not exists in the project directory"() {
+
+        given:
+        def projectDir = Paths.get(Utils.TMP_DIR, UUID.randomUUID().toString())
+        def file = Config.configFilePath(projectDir).toFile()
+
+        when:
+        Config.createIfNotExists(projectDir)
+
+        then:
+        file.exists() == true
+        file.readLines().size() > 0
+    }
+
+    def "save custom config"(){
+
+        given:
+        def projectDir = Paths.get(Utils.TMP_DIR, UUID.randomUUID().toString())
+        def conf = new Config()
+        conf.editor.port = 8080
+
+        when:
+        Config.save(conf, Config.configFilePath(projectDir))
+
+        then:
+        conf.editor.port == Config.load(projectDir).editor.port
+    }
 }

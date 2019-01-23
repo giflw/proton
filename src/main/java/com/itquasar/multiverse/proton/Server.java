@@ -7,7 +7,6 @@ import lombok.Getter;
 @Getter(AccessLevel.PROTECTED)
 public abstract class Server {
 
-
     private final Javalin javalin = Javalin.create();
     private final Project project;
 
